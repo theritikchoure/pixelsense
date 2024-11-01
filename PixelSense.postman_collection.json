@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "186dcb67-4fab-4713-a59e-a7f35ad14ce4",
+		"name": "PixelSense",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37886312"
+	},
+	"item": [
+		{
+			"name": "send-mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emails\": \"ritik@gmail.com\",\r\n    \"password\": \"Test@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/send-mail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"send-mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "track-email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emails\": \"ritik@gmail.com\",\r\n    \"password\": \"Test@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/track-email/QJBUUCB9?email=ritik1@gmail.com",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"track-email",
+						"QJBUUCB9"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "ritik1@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		}
+	]
+}
